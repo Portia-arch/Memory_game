@@ -1,0 +1,7 @@
+//Card Data
+
+const cardArray = [{
+
+
+    
+}]
