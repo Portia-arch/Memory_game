@@ -11,10 +11,11 @@ body {
 .grid {
     max-width: 960px;
     margin: 0 auto;
-    display: grid;
-    /* flex-wrap: wrap; */
+    display: flex;
+    flex-wrap: wrap;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: space-evenly;
+    position: absolute;
 }
 
 .card {
@@ -23,7 +24,8 @@ body {
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .5s;
-    box-shadow: 1px 1px 1px;
+    box-shadow: 0px 0px 10px 2px;
+
 }
 
 .back-face, 
