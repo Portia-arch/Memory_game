@@ -20,6 +20,7 @@ body {
     margin: auto;
     flex-wrap: wrap;
     border: 2px solid black;
+    perspective: 1000px;
 }
 
 .card {
@@ -27,6 +28,8 @@ body {
     height: 225px;
     position: relative;
     transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
 }
 
 .card :active{
@@ -34,7 +37,9 @@ body {
     transition: transform .2s
 }
 
-
+.card.flip {
+    transform: rotateY(180deg);
+}
 
 .front-face,
 .back-face {
@@ -43,11 +48,11 @@ body {
     height: 100%;
     padding: 20px;
     border-radius: 5px;
+    backface-visibility: hidden;
 }
 
 .front-face{
-    padding: 10px;
-    backface-visibility: hidden;
+   transform: rotateY(180deg);
 }
 
 .clicked {
