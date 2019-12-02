@@ -10,20 +10,30 @@
 }
 
 body {
+    height: 100vh;
+    background: thistle;
     margin: 20px 0;
 }
 
+
 .grid {
-    width: 940px;
-    height: 940px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    border: 2px solid black;
+    margin: 50px 90px;
+    position: center;
+    
+    /* width: 930px;
+    height: 640px;
     display: flex;
     margin: auto;
     flex-wrap: wrap;
     border: 2px solid black;
-    perspective: 1000px;
+    perspective: 1000px; */
 }
 
 .card {
+    justify-content: space-evenly;
     width: 225px;
     height: 225px;
     position: relative;
@@ -44,8 +54,8 @@ body {
 .front-face,
 .back-face {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
     padding: 20px;
     border-radius: 5px;
     backface-visibility: hidden;
@@ -55,7 +65,7 @@ body {
    transform: rotateY(180deg);
 }
 
-.clicked {
+.card .clicked {
     border: 4px solid black;
 }
 
@@ -66,4 +76,4 @@ body {
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
-  }
+  } 

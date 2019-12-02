@@ -1,4 +1,5 @@
-//Card Data
+//Card 
+
 const cards = document.querySelectorAll('.card');
 
  let flippedTrig = false;
@@ -21,15 +22,22 @@ function flipTrigger() {
       cardTwo = this;
   }
 
-  //check if the flipped cards match
-    console.log(cardOne.dataset.name);
-    console.log(cardTwo.dataset.name);
+  // //check if the flipped cards match
+  //   console.log(cardOne.dataset.name);
+  //   console.log(cardTwo.dataset.name);
 
-  // function cardmatch() {
-  //   if (cardOne.dataset.name === cardTwo.data-name){
-  //     return
-  //   }
-  // }
+  function cardmatch() {
+    if (cardOne.dataset.name === cardTwo.dataset.name){
+
+      cardOne.removeEventListener("click", flipTrigger);
+      cardTwo.removeEventListener("click", flipTrigger);
+    }
+
+    else {
+      cardOne.classList.remove('flip');
+      cardTwo.classList.remove('flip');
+    }
+  }
 
 }
 
