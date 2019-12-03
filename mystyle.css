@@ -11,17 +11,20 @@
 
 body {
     height: 100vh;
-    background: thistle;
     margin: 20px 0;
 }
 
+h1 {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 .grid {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    border: 2px solid black;
-    margin: 50px 90px;
-    position: center;
+    margin: 10px 50px;
+    flex-direction: column;
+    perspective: 1000px;
     
     /* width: 930px;
     height: 640px;
@@ -29,7 +32,7 @@ body {
     margin: auto;
     flex-wrap: wrap;
     border: 2px solid black;
-    perspective: 1000px; */
+     */
 }
 
 .card {
@@ -40,6 +43,8 @@ body {
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .5s;
+    cursor: pointer; 
+    border: 2px solid black;
 }
 
 .card :active{
@@ -54,10 +59,10 @@ body {
 .front-face,
 .back-face {
     position: absolute;
-    width: 50%;
-    height: 50%;
+    width: 80%;
+    height: 80%;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     backface-visibility: hidden;
 }
 
