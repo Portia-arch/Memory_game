@@ -3,20 +3,24 @@
 *::after {
     box-sizing: border-box;
 }
-
-.board {
-    background: whitesmoke;
-    border: white 1px solid;
-}
-
+ 
 body {
     height: 100vh;
     margin: 20px 0;
 }
 
 h1 {
+    color: rgba(2, 56, 65, 0.863);
     text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Gochi Hand', cursive;
+}
+
+.game-info {
+    color: rgb(2, 39, 27);
+    font-family: 'Gochi Hand', cursive;
+    font-size: 40px;
+    margin: 15px;
+    float: right;
 }
 
 .grid {
@@ -37,14 +41,15 @@ h1 {
 
 .card {
     justify-content: space-evenly;
-    width: 225px;
-    height: 170px;
+    margin: 5px;
+    width: calc(225px - 10px);
+    height: calc(170px - 10px);
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .5s;
     cursor: pointer; 
-    border: 2px solid black;
+    border: 2px solid rgba(2, 56, 65, 0.863);
 }
 
 .card :active{
@@ -82,3 +87,55 @@ h1 {
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
   } 
+
+.button {
+   text-align: center;
+   cursor: pointer;
+   display: inline-block;
+   font-size: 20px; 
+   padding: 15px 32px;
+   border-radius: 20px;
+   margin: 10px;
+   color: black;
+   background-color: rgba(32, 128, 96, 0.719);
+}
+
+.button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button1 {
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+    font-size: 20px;
+    margin: 10px;
+    padding: 15px 32px;
+    transition: all 0.5s;
+    color: black;
+    background-color: rgba(32, 128, 96, 0.719);
+}
+
+.button1:hover span{
+    padding-right: 25px;
+}
+
+.button1:hover span:after{
+    opacity: 1;
+    right: 0;
+}
+.button span:after{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button1 span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}

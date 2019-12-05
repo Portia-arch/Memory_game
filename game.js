@@ -3,6 +3,7 @@
 const cards = document.querySelectorAll('.card');
 
  let flippedTrig = false;
+ let flips = 0;
  //the flipping of cards must be disabled if two sets of cards have been opened
  let boardLocked = false;
  let cardOne, cardTwo;
@@ -27,7 +28,6 @@ function flipTrigger() {
 
       cardsMatch();
   }
-
 }
 
 //check if the two flipped cards match and if they match they must remain opened. if not they must flip back and close
@@ -52,7 +52,7 @@ function closeCards() {
 
   setTimeout(() => {
     cardOne.classList.remove('flip');
-    cardTwo.classList.remove('flip');
+    cardTwo.classList.remove('flip');   
 
     boardLocked = false;
   }, 500)
@@ -66,6 +66,16 @@ function closeCards() {
     card.style.order = randomPos;
   });
 })();
+
+function resetBoard() {
+  [hasFlippedCard, lockBoard] = [false, false];
+  [firstCard, secondCard] = [null, null];
+}
+
+
+function gameStat() {
+  sweetAlert("Yey!!! You had " + flips + "in 0:00")
+}
 cards.forEach(card => card.addEventListener('click', flipTrigger));
 
 

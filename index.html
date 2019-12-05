@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Memory Game</title>
-
     <link rel="stylesheet" href="mystyle.css" />
+    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand&display=swap" rel="stylesheet">
   </head>
   <body>
     <h1 class="title">Click It If You Remember It</h1>
   
-    <h2 class="timer">Time:</h2>
+    <div class="game-info"> Flips: <span class="number of flips"> 0 </span></div>
+    <button class="button1" style="vertical-align: middle;"><span>Instructions</span></button>
     <section class="grid">
       <div class="card" data-name="SDBH">
+        <div class="animation">
         <img
           class="front-face"
           src="dragon_ball/SDBH_G&V.png"
@@ -21,6 +23,7 @@
           
         />
         <img class="back-face" src="dragon_ball/avatars/avatar.png" alt="goku">
+      </div>
       </div>
 
       <div class="card" data-name="SDBH">
@@ -132,6 +135,8 @@
       </div>
 
     </section>
+    <button class="button ">Restart</button>
+  
     <script src="game.js"></script>
   </body>
 </html>
