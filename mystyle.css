@@ -7,16 +7,19 @@
 body {
     height: 100vh;
     margin: 20px 0;
+    background-image: url("dragon_ball/blend.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 h1 {
-    color: rgba(2, 56, 65, 0.863);
+    color: white;
     text-align: center;
     font-family: 'Gochi Hand', cursive;
 }
 
 .game-info {
-    color: rgb(2, 39, 27);
+    color: white;
     font-family: 'Gochi Hand', cursive;
     font-size: 40px;
     margin: 15px;
@@ -49,7 +52,7 @@ h1 {
     transform-style: preserve-3d;
     transition: transform .5s;
     cursor: pointer; 
-    border: 2px solid rgba(2, 56, 65, 0.863);
+    /* border: 2px solid rgba(2, 56, 65, 0.863); */
 }
 
 .card :active{
@@ -64,7 +67,7 @@ h1 {
 .front-face,
 .back-face {
     position: absolute;
-    width: 90%;
+    width: 80%;
     height: 80%;
     padding: 20px;
     border-radius: 10px;
@@ -96,8 +99,8 @@ h1 {
    padding: 15px 32px;
    border-radius: 20px;
    margin: 10px;
-   color: black;
-   background-color: rgba(32, 128, 96, 0.719);
+   color: white;
+   background-color: rgba(5, 101, 114, 0.719);
 }
 
 .button:hover {
@@ -112,8 +115,8 @@ h1 {
     margin: 10px;
     padding: 15px 32px;
     transition: all 0.5s;
-    color: black;
-    background-color: rgba(32, 128, 96, 0.719);
+    color: white;
+    background-color: rgba(5, 101, 114, 0.719);
 }
 
 .button1:hover span{

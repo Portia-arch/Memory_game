@@ -74,7 +74,7 @@ function resetBoard() {
 
 
 function gameStat() {
-  sweetAlert("Yey!!! You had " + flips + "in 0:00")
+  
 }
 cards.forEach(card => card.addEventListener('click', flipTrigger));
 
