@@ -9,11 +9,9 @@ const cards = document.querySelectorAll('.card');
  let cardOne, cardTwo;
 
 function flipTrigger() {
-
+  countTimer.innerHTML = flips++;
   if (boardLocked) return;
-  if (this === cardOne) return;
-
-
+  // if (this === cardOne) return;
   this.classList.add('flip');
  
   //the first flip
@@ -21,14 +19,14 @@ function flipTrigger() {
     flipTrigger = true;
     cardOne = this;
 
-  } else
-    {
+    return;
+
+  }
       // the second flip
       flipTrigger = false;
       cardTwo = this;
 
       cardsMatch();
-  }
 }
 
 //check if the two flipped cards match and if they match they must remain opened. if not they must flip back and close
@@ -94,21 +92,3 @@ function countTimer() {
 cards.forEach(card => card.addEventListener('click', flipTrigger));
 
 
-
-// function flippedCard() {
-  
-
-// };
-
-
-
-
-// grid.addEventListener("click", function() {
-//   let selected = event.target
-
-//   if (selected.nodeName === "section") {
-//     return
-//   }
-
-//   selected.classList.add("selected")
-// })
