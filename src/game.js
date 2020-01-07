@@ -9,6 +9,7 @@ const cards = document.querySelectorAll('.card');
  let cardOne, cardTwo;
 
 function flipTrigger() {
+
   if (boardLocked) return;
   if (this === cardOne) return;
 
@@ -67,14 +68,28 @@ function closeCards() {
   });
 })();
 
-function resetBoard() {
-  [hasFlippedCard, lockBoard] = [false, false];
-  [firstCard, secondCard] = [null, null];
-}
+// function resetBoard() {
+//   [hasFlippedCard, lockBoard] = [false, false];
+//   [firstCard, secondCard] = [null, null];
+// }
 
 
 function gameStat() {
   
+}
+
+var timerVar = setInterval(countTimer, 1000);
+var totalSeconds = 0;
+
+function countTimer() {
+  ++totalSeconds;
+  var hour = Math.floor(totalSeconds / 3600);
+  var minute = Math.floor((totalSeconds - hour * 3600) / 60);
+  var seconds = totalSeconds - (hour * 3600 + minute * 60);
+
+  document.getElementById("hour").innerHTML = hour;
+  document.getElementById("minute").innerHTML = minute;
+  document.getElementById("seconds").innerHTML = seconds;
 }
 cards.forEach(card => card.addEventListener('click', flipTrigger));
 
