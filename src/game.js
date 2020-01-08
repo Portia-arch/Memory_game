@@ -9,25 +9,28 @@ const cards = document.querySelectorAll('.card');
  let cardOne, cardTwo;
 
 function flipTrigger() {
+
   countTimer.innerHTML = flips++;
+
   if (boardLocked) return;
   // if (this === cardOne) return;
   this.classList.add('flip');
  
   //the first flip
-  if (!flipTrigger) {
-    flipTrigger = true;
+  if (!flippedTrig) {
+    flippedTrig = true;
     cardOne = this;
 
     return;
 
   }
       // the second flip
-      flipTrigger = false;
+      flippedTrig = false;
       cardTwo = this;
 
       cardsMatch();
 }
+
 
 //check if the two flipped cards match and if they match they must remain opened. if not they must flip back and close
 
@@ -66,28 +69,49 @@ function closeCards() {
   });
 })();
 
-// function resetBoard() {
-//   [hasFlippedCard, lockBoard] = [false, false];
-//   [firstCard, secondCard] = [null, null];
-// }
+function resetBoard() {
+  [hasFlippedCard, lockBoard] = [false, false];
+  [firstCard, secondCard] = [null, null];
+}
 
 
 function gameStat() {
   
 }
 
-var timerVar = setInterval(countTimer, 1000);
-var totalSeconds = 0;
+var seconds = 0; minutes = 0;
+var timer = document.querySelector(".timer");
+var interval;
 
 function countTimer() {
-  ++totalSeconds;
-  var hour = Math.floor(totalSeconds / 3600);
-  var minute = Math.floor((totalSeconds - hour * 3600) / 60);
-  var seconds = totalSeconds - (hour * 3600 + minute * 60);
 
-  document.getElementById("hour").innerHTML = hour;
-  document.getElementById("minute").innerHTML = minute;
-  document.getElementById("seconds").innerHTML = seconds;
+  interval = setInterval(function(){
+    timer.innerHTML = minute+"mins "+second+"secs ";
+    ++totalSeconds;
+
+    if(second == 60){
+      minute++;
+      second = 0;
+    }
+    if(minute == 60){
+      hour++;
+      minute = 0;
+    }
+  }, 1000);
+  
+}
+function countMoves(){
+  flips++;
+  countTimer.innerHTML = flips;
+
+  //start timer on first flip
+  if(flips == 1){
+    second = 0;
+    minute = 0;
+    hour = 0;
+
+    countTimer();
+  }
 }
 cards.forEach(card => card.addEventListener('click', flipTrigger));
 
