@@ -101,6 +101,8 @@ function countTimer() {
   
 }
 function countMoves(){
+
+  
   flips++;
   countTimer.innerHTML = flips;
 

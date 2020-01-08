@@ -13,7 +13,11 @@
   
     <div class="game-info"> Flips: <span class="number of flips"> 0 </span></div>
     <div class="timer"></div>
-    <button class="button" style="vertical-align:middle">Instruction</button>
+    <button type="button" class="button" style="vertical-align:middle" onclick="myClick()">Instruction</button>
+    <script> function myClick() {
+      alert("Test your memory with this game. The game has 3 different levels, the easy, medium and hard level. The harder the level the more the cards in the game. On the game board there are always two matching cards. You are required to match a logo with an appropriate picture. Good Luck!!");
+    }
+    </script>
     <section class="grid">
       <div class="card" data-name="SDBH">
         <img
