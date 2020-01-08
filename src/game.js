@@ -1,4 +1,4 @@
-//Card 
+//Cards 
 
 const cards = document.querySelectorAll('.card');
 
