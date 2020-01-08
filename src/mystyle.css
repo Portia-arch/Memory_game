@@ -26,20 +26,20 @@ h1 {
     float: right;
 }
 
+.game-info2 {
+    color: white;
+    font-family: 'Gochi Hand', cursive;
+    font-size: 40px;
+    margin: 15px;
+    text-align: center;
+}
+
 .grid {
     display: grid;
     grid-template-columns: auto auto auto auto;
     margin: 10px 50px;
     flex-direction: column;
     perspective: 1000px;
-    
-    /* width: 930px;
-    height: 640px;
-    display: flex;
-    margin: auto;
-    flex-wrap: wrap;
-    border: 2px solid black;
-     */
 }
 
 .card {
@@ -52,7 +52,6 @@ h1 {
     transform-style: preserve-3d;
     transition: transform .5s;
     cursor: pointer; 
-    /* border: 2px solid rgba(2, 56, 65, 0.863); */
 }
 
 .card :active{

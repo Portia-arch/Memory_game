@@ -102,7 +102,7 @@ function countTimer() {
 }
 function countMoves(){
 
-  
+
   flips++;
   countTimer.innerHTML = flips;
 
@@ -115,6 +115,7 @@ function countMoves(){
     countTimer();
   }
 }
+
 cards.forEach(card => card.addEventListener('click', flipTrigger));
 
 
