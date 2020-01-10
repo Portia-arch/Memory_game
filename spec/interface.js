@@ -1,0 +1,149 @@
+const html = `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="mystyle.css" />
+    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <h1 class="title">Click It If You Remember It</h1>
+  
+    <div class="game-info"> Flips: <span id="number of flips"> 0 </span></div>
+
+    <div class="game-info2">Time: <span id="time-remaining">100</span></div>
+
+    <button type="button" class="button" style="vertical-align:middle" onclick="myClick()">Instruction</button>
+    <script> function myClick() {
+      alert("Test your memory with this game. The game has 3 different levels, the easy, medium and hard level. The harder the level the more the cards in the game. On the game board there are always two matching cards. You are required to match a logo with an appropriate picture.\nGood Luck!!");
+    }
+    </script>
+
+    <section class="grid">
+      <div class="card" data-name="SDBH">
+        <img
+          class="front-face"
+          src="dragon_ball/SDBH_G&V.png"
+          alt="SDBH"
+          
+        />
+        <img class="back-face" src="dragon_ball/avatars/avatar.png" alt="goku">
+      </div>
+
+      <div class="card" data-name="SDBH">
+        <img
+          class="front-face"
+          src="dragon_ball/logos/SDBH_logo.png"
+          alt="SDBH logo"
+         
+        />
+        <img class="back-face" src="dragon_ball/avatars/avatar.png" alt="goku">
+      </div>
+
+      <div class="card" data-name="DBGT">
+        <img
+          class="front-face"
+          src="dragon_ball/gB_gt (1).png"
+          alt="GT"
+  
+        />
+        <img class="back-face" src="dragon_ball/avatars/avatar.png" alt="goku">
+      </div>
+
+      <div class="card" data-name="DBGT">
+        <img
+          class="front-face"
+          src="dragon_ball/logos/DBGT_logo.png"
+          alt="GT logo"
+          
+        />
+        <img class="back-face" src="dragon_ball/avatars/avatar.png" alt="goku">
+      </div>
+
+      <div class="card" data-name="DragonBall">
+        <img
+          class="front-face"
+          src="dragon_ball/flying_nimbus.png"
+          alt="DB_1"
+        />
+        <img class="back-face" src="dragon_ball/avatars/avatar.png" alt="goku">
+      </div>
+
+      <div class="card" data-name="DragonBall">
+        <img
+          class="front-face"
+          src="dragon_ball/logos/DB.png"
+          alt="DB_1 logo"
+         
+        />
+        <img class="back-face" src="dragon_ball/avatars/avatar.png" alt="goku">
+      </div>
+
+      <div class="card" data-name="SDB">
+        <img
+          class="front-face"
+          src="dragon_ball/DBSuper_G&V.png"
+          alt="Super DB"
+         
+        />
+        <img class="back-face" src="dragon_ball/avatars/avatar.png" alt="goku">
+      </div>
+
+      <div class="card" data-name="SDB">
+        <img
+          class="front-face"
+          src="dragon_ball/logos/Super-DB_logo.png"
+          alt="Super DB_logo"
+          
+        />
+        <img class="back-face" src="dragon_ball/avatars/avatar.png" alt="goku">
+      </div>
+
+      <div class="card" data-name="Broly">
+        <img
+          class="front-face"
+          src="dragon_ball/DB_Broly1.png"
+          alt="broly"
+          
+        />
+        <img class="back-face" src="dragon_ball/avatars/avatar.png" alt="goku">
+      </div>
+
+      <div class="card" data-name="Broly">
+        <img
+          class="front-face"
+          src="dragon_ball/logos/Broly_logo.png"
+          alt="broly logo"
+         
+        />
+        <img class="back-face" src="dragon_ball/avatars/avatar.png" alt="goku">
+      </div>
+
+      <div class="card" data-name="DragonBallZ">
+        <img
+          class="front-face"
+          src="dragon_ball/DBZ_G&V.png" 
+          alt="DB Z"
+          
+        />
+        <img class="back-face" src="dragon_ball/avatars/avatar.png" alt="goku">
+      </div>
+
+      <div class="card" data-name="DragonBallZ">
+        <img
+          class="front-face"
+          src="dragon_ball/logos/DBZ_logo.png"
+          alt="DB_Z logo"
+          
+        /><img class="back-face" src="dragon_ball/avatars/avatar.png" alt="goku">
+      </div>
+
+    </section>
+    <button onclick="location.reload()" class="button ">Restart</button>
+  
+    <script src="game.js"></script>
+  </body>
+</html>
+`

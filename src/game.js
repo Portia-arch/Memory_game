@@ -118,4 +118,10 @@ function countMoves(){
 
 cards.forEach(card => card.addEventListener('click', flipTrigger));
 
-
+module.exports = {
+  flipTrigger,
+  cardsMatch,
+  impairCards,
+  closeCards,
+  shuffle
+}

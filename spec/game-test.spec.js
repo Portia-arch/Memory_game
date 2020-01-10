@@ -1,44 +1,48 @@
-
-describe('memory game tests', function(){
-    const html = require('./interface.js')
+describe('memory game', function(){
+    const html = require('../spec/interface')
     const jsdom = require('jsdom')
-    const { JSDOM } = jsdom;
+    const {JSDOM} = jsdom;
 
-// using jsDom's VirtualConsole method
-const virtualConsole = new jsdom.VirtualConsole();
+    //JSDOM virtual console method, telling it to use the default nodejs console
+    const virtualConsole = new jsdom.VirtualConsole();
 
-// and telling it to use the default nodejs console. 
-virtualConsole.sendTo(console);
+    virtualConsole.sendTo(console);
 
-// this function will simulate a click on one of the game cards.
-const clickSimulator = (args) => {
-    let event =  new dom.window.mouseEvent('click', {
-        view: dom.window,
-        bubbles: true,
-        cancelable: false
-    });
+    //
+    const  clickSimumlator = (args)=> {
+        let event = new dom.window.MouseEvent('click', {
+            view: dom.window,
+            bubbles: true,
+            cancelable: false
+        })
+        let elements = document.getElementsByClassName('card')[args];
+        elements.dispatchEvent(event);
+    };
 
-};
+    beforeEach(function(){
 
-    beforeEach(function () {
         dom = new JSDOM(html, {
-            //enables JSDOM to run scripts and use external resources via <links>, <scripts>, <img>
-            runScripts: "dengerously",
+            runScripts:"dangerously",
             resources: "usable"
         });
-        document.window.document;
-        games = require('./src/game.js');
-
+        document = dom.window.document;
+        game = require("../src/game");
     });
 
-    afterEach(function(){
-        delete require.cache[require.resolve('./src/game.js')]
+    it("should be able to return 12 cards", function() {
+        expect(document.getElementsByClassName('card').length).toEqual(12)
     });
+    // it("should listen be able add addEventListner to all cards and make them clickable", function(){
+    //     expect().toBe()
+    // })
+    
+})
 
-    it("should be able to add addEventListner to all game tiles and make them clikable", function(){
-        clickSimulator(0)
-        expect(document.getElementsByClassName('card').length).toEqual(1)
-    })
+
+
+
+
+
 
 // const jsdom = new JSDOM('<!doctype html><html><body></body></html>');
 
@@ -56,4 +60,5 @@ const clickSimulator = (args) => {
 //     it('should increase the counter for the flips', function(){
 //         expect(card).toHaveBeencalled();
 //     });
- });
+//  });
+
