@@ -2,15 +2,17 @@
 
 const cards = document.querySelectorAll('.card');
 
+ let counter = document.getElementsByClassName('flips');
  let flippedTrig = false;
- let flips = 0;
+ let click = 0;
  //the flipping of cards must be disabled if two sets of cards have been opened
  let boardLocked = false;
  let cardOne, cardTwo;
 
+
 function flipTrigger() {
 
-  countTimer.innerHTML = flips++;
+  counter.innerHTML = click++;
 
   if (boardLocked) return;
   // if (this === cardOne) return;
@@ -120,8 +122,5 @@ cards.forEach(card => card.addEventListener('click', flipTrigger));
 
 module.exports = {
   flipTrigger,
-  cardsMatch,
   impairCards,
-  closeCards,
-  shuffle
 }

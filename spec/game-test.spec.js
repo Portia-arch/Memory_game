@@ -1,42 +1,54 @@
-describe('memory game', function(){
-    const html = require('../spec/interface')
-    const jsdom = require('jsdom')
-    const {JSDOM} = jsdom;
 
-    //JSDOM virtual console method, telling it to use the default nodejs console
+describe('memory game tests', function () {
+    const html = require('./interface.js')
+    const jsdom = require('jsdom')
+    const { JSDOM } = jsdom;
+
+    // using jsDom's VirtualConsole method
     const virtualConsole = new jsdom.VirtualConsole();
 
+    // and telling it to use the default nodejs console. 
     virtualConsole.sendTo(console);
 
-    //
-    const  clickSimumlator = (args)=> {
+    // this function simulates a click on one of the game tiles.
+    const clickSimulator = (args) => {
         let event = new dom.window.MouseEvent('click', {
             view: dom.window,
             bubbles: true,
             cancelable: false
         })
-        let elements = document.getElementsByClassName('card')[args];
-        elements.dispatchEvent(event);
+
+        let element = document.getElementsByClassName('card')[args];
+        element.dispatchEvent(event);
     };
 
-    beforeEach(function(){
+    beforeEach(() => {
 
         dom = new JSDOM(html, {
-            runScripts:"dangerously",
+            
+            runScripts: "dangerously",
             resources: "usable"
         });
         document = dom.window.document;
         game = require("../src/game");
-    });
 
-    it("should be able to return 12 cards", function() {
-        expect(document.getElementsByClassName('card').length).toEqual(12)
+    })
+
+    afterEach(() => {
+        delete require.cache[require.resolve('../src/game')]
+    })
+
+    it("should be able to add addEventListener to all game tiles and make them clickable", () => {
+        clickSimulator(0) // specify which card index to click
+        expect(document.getElementsByClassName('memory-cards').length).toEqual(1)
     });
+     it('game must have 12 cards', function () {
+            expect(game.card).toEqual(12)
+        });
+});
     // it("should listen be able add addEventListner to all cards and make them clickable", function(){
     //     expect().toBe()
     // })
-    
-})
 
 
 
