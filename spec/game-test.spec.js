@@ -19,7 +19,7 @@ describe('memory game tests', function () {
         })
 
         let element = document.getElementsByClassName('card')[args];
-        element.dispatchEvent(event);
+        // element.dispatchEvent(event);
     };
 
     beforeEach(() => {
@@ -38,12 +38,12 @@ describe('memory game tests', function () {
         delete require.cache[require.resolve('../src/game')]
     })
 
-    it("should be able to add addEventListener to all game tiles and make them clickable", () => {
-        clickSimulator(0) // specify which card index to click
-        expect(document.getElementsByClassName('memory-cards').length).toEqual(1)
-    });
+    // it("should be able to add addEventListener to all game tiles and make them clickable", () => {
+    //     clickSimulator(0) // specify which card index to click
+    //     expect(document.getElementsByClassName('memory-cards').length).toEqual(1)
+    // });
      it('game must have 12 cards', function () {
-            expect(game.card).toEqual(12)
+            expect(game.card.length).toEqual(12)
         });
 });
     // it("should listen be able add addEventListner to all cards and make them clickable", function(){
